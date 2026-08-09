@@ -14,7 +14,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%2305070c'/%3E%3Cpath d='M10 6v20M10 16l11-10M10 16l11 10' stroke='%2352a8ff' stroke-width='2.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<link rel="icon" href="assets/icon.png" type="image/png">
 <style>
   :root{
     --bg:#05070c;
@@ -59,7 +59,7 @@
   header .bar{display:flex; align-items:center; justify-content:space-between; gap:20px; padding:14px 0;}
   .brand{display:flex; align-items:center; gap:11px;}
   .brand-mark{width:36px; height:36px; border-radius:9px; overflow:hidden; background:#000; flex:none; border:1px solid var(--border);}
-  .brand-mark img{width:100%; height:150%; object-fit:cover; object-position:top;}
+  .brand-mark img{width:100%; height:100%; object-fit:cover; object-position:center;}
   .brand-name{font-family:var(--font-display); font-weight:700; font-size:19px; letter-spacing:.04em; color:var(--chrome-2);}
   nav{display:flex; align-items:center; gap:28px;}
   nav a.navlink{font-weight:500; font-size:14.5px; color:var(--text-muted);}
@@ -117,7 +117,7 @@
   .card p{margin:0; font-size:15px; line-height:1.6; color:var(--text-muted);}
 
   /* PACOTES */
-  .pkg-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px; margin-top:48px; align-items:stretch;}
+  .pkg-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:22px; margin-top:48px; align-items:stretch;}
   .pkg-card{position:relative; background:var(--surface); border:1px solid var(--border); border-radius:var(--radius); padding:32px 28px; display:flex; flex-direction:column; transition:transform .2s, border-color .2s, box-shadow .2s;}
   .pkg-card:hover{transform:translateY(-4px); border-color:#2a3648;}
   .pkg-card.featured{border-color:var(--blue); background:linear-gradient(180deg, rgba(47,125,255,.09), var(--surface) 40%); box-shadow:0 30px 60px -30px rgba(47,125,255,.5);}
@@ -170,11 +170,15 @@
   .float-wa{position:fixed; right:22px; bottom:22px; z-index:60; display:inline-flex; align-items:center; gap:10px; font-weight:700; font-size:14.5px; padding:13px 20px; border-radius:999px; box-shadow:0 16px 34px -10px rgba(37,211,102,.55); transition:transform .2s;}
   .float-wa:hover{transform:translateY(-2px);}
 
+  @media (max-width:1080px){
+    .pkg-grid{grid-template-columns:repeat(2,1fr);}
+  }
   @media (max-width:900px){
     .hero-grid{grid-template-columns:1fr; gap:48px; padding:56px 0 68px;}
     .h1-hero{font-size:38px;}
     .h2-big{font-size:29px;}
-    .svc-grid, .steps-grid, .pkg-grid{grid-template-columns:1fr;}
+    .svc-grid, .steps-grid{grid-template-columns:1fr;}
+    .pkg-grid{grid-template-columns:1fr;}
     section.sec{padding:68px 0;}
   }
   @media (max-width:480px){
@@ -194,7 +198,7 @@
   <header>
     <div class="wrap bar">
       <a href="#top" class="brand">
-        <span class="brand-mark"><img src="assets/krythos.png" alt="Krythos"></span>
+        <span class="brand-mark"><img src="assets/icon.png" alt="Krythos"></span>
         <span class="brand-name">KRYTHOS</span>
       </a>
       <nav>
@@ -352,6 +356,47 @@
           <a href="https://wa.me/5513996646955?text=Oi!%20Vi%20o%20plano%20Sistema%20Completo%20da%20Krythos%20e%20quero%20saber%20mais." target="_blank" rel="noopener" class="btn btn-ghost">Quero esse plano</a>
         </div>
 
+        <div class="pkg-card">
+          <span class="pkg-tier">Plano 4</span>
+          <h3>Integração com IA</h3>
+          <p class="pkg-price">Sob orçamento<small>Valor calculado conforme a complexidade</small></p>
+          <p class="pkg-desc">Pra sites simples ou complexos que já existem (ou estão sendo criados) e precisam de inteligência artificial embarcada no fluxo.</p>
+          <ul class="pkg-list">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Funciona em sites simples e complexos</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Chat/assistente de atendimento com IA</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Recomendação e busca inteligente de itens</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Automação de tarefas repetitivas</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Escopo definido junto com você</li>
+          </ul>
+          <a href="https://wa.me/5513996646955?text=Oi!%20Vi%20o%20plano%20Integra%C3%A7%C3%A3o%20com%20IA%20da%20Krythos%20e%20quero%20fazer%20um%20or%C3%A7amento." target="_blank" rel="noopener" class="btn btn-ghost">Fazer orçamento</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- AGENTES DE IA -->
+  <section id="agentes-ia" class="sec">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="eyebrow">Agentes de IA</span>
+        <h2 class="h2-big">Um agente de IA sob medida pro seu negócio</h2>
+        <p class="sec-lede">Fora dos planos de site, também construo agentes de IA independentes — pra atendimento, automação interna ou qualquer fluxo que hoje ainda depende de alguém fazer na mão.</p>
+      </div>
+      <div class="pkg-grid" style="grid-template-columns:minmax(280px,380px); justify-content:center;">
+        <div class="pkg-card featured">
+          <span class="pkg-tier">Agente sob medida</span>
+          <h3>Criação de Agente de IA</h3>
+          <p class="pkg-price">R$ 1.000 a R$ 1.800<small>Valor final conforme a complexidade do agente</small></p>
+          <p class="pkg-desc">Agente pensado pro seu processo específico, treinado com o contexto do seu negócio.</p>
+          <ul class="pkg-list">
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Atendimento automatizado via WhatsApp ou site</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Treinado com as informações do seu negócio</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Automação de tarefas e respostas repetitivas</li>
+            <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>Integração com seu site ou sistema atual</li>
+          </ul>
+          <a href="https://wa.me/5513996646955?text=Oi!%20Vi%20o%20plano%20Cria%C3%A7%C3%A3o%20de%20Agente%20de%20IA%20da%20Krythos%20e%20quero%20saber%20mais." target="_blank" rel="noopener" class="btn btn-primary">Quero esse plano</a>
+        </div>
       </div>
     </div>
   </section>
