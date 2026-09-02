@@ -360,9 +360,39 @@
     display:inline-flex;
     align-items:center;
     gap:6px;
+    background:none;
+    border:none;
+    padding:0;
+    cursor:pointer;
+    font-family:var(--corpo);
     transition:gap 0.2s ease;
   }
   .solucao-link:hover{ gap:10px; }
+  .solucao-link .arrow{ display:inline-block; transition:transform 0.25s ease; }
+  .solucao-card.open .solucao-link .arrow{ transform:rotate(90deg); }
+  .solucao-link .label-open{ display:inline; }
+  .solucao-link .label-close{ display:none; }
+  .solucao-card.open .solucao-link .label-open{ display:none; }
+  .solucao-card.open .solucao-link .label-close{ display:inline; }
+
+  .solucao-more{
+    max-height:0;
+    overflow:hidden;
+    opacity:0;
+    transition:max-height 0.35s ease, opacity 0.3s ease, margin-top 0.35s ease;
+  }
+  .solucao-more p{
+    color:var(--muted);
+    font-size:0.94rem;
+    max-width:360px;
+    padding-top:16px;
+    border-top:1px solid var(--line);
+  }
+  .solucao-card.open .solucao-more{
+    max-height:220px;
+    opacity:1;
+    margin-top:18px;
+  }
 
   /* ---------- Projetos (vazio por enquanto) ---------- */
 
@@ -783,6 +813,7 @@
   <!-- HERO -->
   <section class="hero" id="inicio">
     <div class="hero-grid"></div>
+    <img src="assets/krythos-mark.png" alt="" class="hero-mark">
     <div class="hero-inner">
       <div class="eyebrow">Estúdio de desenvolvimento &amp; IA</div>
       <h1>Transformamos ideias e negócios em <span class="accent">produtos digitais.</span></h1>
@@ -813,29 +844,49 @@
       </div>
 
       <div class="solucoes-grid">
-        <div class="solucao-card">
+        <div class="solucao-card" data-solucao>
           <span class="solucao-num">01</span>
           <h3>Sites &amp; Landing Pages</h3>
           <p>Presença digital criada para apresentar, posicionar e converter.</p>
-          <a href="#contato" class="solucao-link">Conhecer →</a>
+          <button class="solucao-link" type="button" aria-expanded="false">
+            <span class="label-open">Conhecer</span><span class="label-close">Fechar</span> <span class="arrow">→</span>
+          </button>
+          <div class="solucao-more">
+            <p>Sites institucionais, landing pages de conversão e páginas de captura pensadas para apresentar sua empresa com clareza e transformar visitas em contato.</p>
+          </div>
         </div>
-        <div class="solucao-card">
+        <div class="solucao-card" data-solucao>
           <span class="solucao-num">02</span>
           <h3>Sistemas Web</h3>
           <p>Plataformas e ferramentas desenvolvidas de acordo com sua operação.</p>
-          <a href="#contato" class="solucao-link">Conhecer →</a>
+          <button class="solucao-link" type="button" aria-expanded="false">
+            <span class="label-open">Conhecer</span><span class="label-close">Fechar</span> <span class="arrow">→</span>
+          </button>
+          <div class="solucao-more">
+            <p>Painéis administrativos, plataformas de gestão e ferramentas internas sob medida, construídas em volta de como sua operação realmente funciona.</p>
+          </div>
         </div>
-        <div class="solucao-card">
+        <div class="solucao-card" data-solucao>
           <span class="solucao-num">03</span>
           <h3>Inteligência Artificial</h3>
           <p>Agentes capazes de atender, responder, organizar e automatizar tarefas.</p>
-          <a href="#contato" class="solucao-link">Conhecer →</a>
+          <button class="solucao-link" type="button" aria-expanded="false">
+            <span class="label-open">Conhecer</span><span class="label-close">Fechar</span> <span class="arrow">→</span>
+          </button>
+          <div class="solucao-more">
+            <p>Agentes de IA para atendimento, qualificação de leads, agendamentos e FAQ — veja um exemplo real na seção de <a href="#ia" style="color:var(--blue-2);">Inteligência Artificial</a> mais abaixo.</p>
+          </div>
         </div>
-        <div class="solucao-card">
+        <div class="solucao-card" data-solucao>
           <span class="solucao-num">04</span>
           <h3>Automações</h3>
           <p>Integrações que eliminam processos repetitivos e conectam ferramentas.</p>
-          <a href="#contato" class="solucao-link">Conhecer →</a>
+          <button class="solucao-link" type="button" aria-expanded="false">
+            <span class="label-open">Conhecer</span><span class="label-close">Fechar</span> <span class="arrow">→</span>
+          </button>
+          <div class="solucao-more">
+            <p>Conexões entre WhatsApp, planilhas, CRMs e outras ferramentas para eliminar tarefas repetitivas e manter tudo funcionando sem intervenção manual.</p>
+          </div>
         </div>
       </div>
     </div>
@@ -1100,6 +1151,15 @@
     closeBtn.addEventListener('click', closeNav);
     nav.querySelectorAll('a').forEach(function(link){
       link.addEventListener('click', closeNav);
+    });
+
+    document.querySelectorAll('[data-solucao]').forEach(function(card){
+      var btn = card.querySelector('.solucao-link');
+      btn.addEventListener('click', function(){
+        var isOpen = card.classList.contains('open');
+        card.classList.toggle('open', !isOpen);
+        btn.setAttribute('aria-expanded', String(!isOpen));
+      });
     });
   })();
 </script>
