@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" role="img" aria-labelledby="title desc">
+  <title id="title">KRYTHOS depth field</title>
+  <desc id="desc">A calm surface above a deep blue field with a controlled emerging reflection.</desc>
+  <defs>
+    <linearGradient id="field" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#0A202D"/>
+      <stop offset=".38" stop-color="#061622"/>
+      <stop offset="1" stop-color="#02070B"/>
+    </linearGradient>
+    <radialGradient id="pressure" cx="72%" cy="72%" r="48%">
+      <stop offset="0" stop-color="#0E4B69" stop-opacity=".72"/>
+      <stop offset=".48" stop-color="#0B2E43" stop-opacity=".28"/>
+      <stop offset="1" stop-color="#02070B" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="ray" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8FC5D2" stop-opacity=".12"/>
+      <stop offset="1" stop-color="#8FC5D2" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#field)"/>
+  <path d="M0 284C297 251 554 333 823 286C1099 238 1350 249 1600 289" fill="none" stroke="#4C879D" stroke-width="1" opacity=".38"/>
+  <path d="M0 288C286 266 548 347 828 298C1102 249 1350 263 1600 300V900H0Z" fill="url(#pressure)"/>
+  <path d="M1020 290L1290 900H1020L904 296Z" fill="url(#ray)" opacity=".4"/>
+  <path d="M1270 290L1510 900H1372L1115 293Z" fill="url(#ray)" opacity=".2"/>
+</svg>

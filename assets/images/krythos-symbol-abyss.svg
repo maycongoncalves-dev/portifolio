@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" role="img" aria-labelledby="title desc">
+  <title id="title">KRYTHOS symbol in Abyss</title>
+  <desc id="desc">An abstract K formed by a monolithic axis and two controlled currents.</desc>
+  <g fill="#02070B">
+    <path d="M12 8H29V92H12Z"/>
+    <path d="M29 50C42 41 50 26 61 8H86C74 31 59 49 43 59L29 64Z"/>
+    <path d="M38 53C56 62 70 77 88 92H62C50 78 39 68 29 64Z"/>
+  </g>
+</svg>
